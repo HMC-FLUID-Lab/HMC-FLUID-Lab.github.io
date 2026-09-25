@@ -8,7 +8,7 @@ import { Reveal } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "research-fluid",
   description:
-    "Statistical field theory for polar liquids, water structure, polyelectrolyte brushes, and liquid-liquid phase separation.",
+    "Statistical field theory for polar liquids, water structure, polyelectrolyte brushes, hybrid particle-field simulation, and kidney filtration.",
 };
 
 export default function ResearchPage() {
@@ -18,7 +18,7 @@ export default function ResearchPage() {
         <SectionNumber n={1} />
         <h1 className="display mt-5">research</h1>
         <p className="mt-5 max-w-[58ch] prose-body">
-          Four ongoing thrusts at the intersection of statistical thermodynamics
+          Five ongoing thrusts at the intersection of statistical thermodynamics
           and soft-matter chemical physics — derivations are tedious, but the
           resulting expressions are often simple.
         </p>
@@ -61,7 +61,18 @@ export default function ResearchPage() {
                         />
                       </div>
                     </figure>
-                  ) : null}
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="flex h-32 w-32 flex-shrink-0 items-center justify-center rounded-xl border border-dashed font-mono text-xs sm:h-40 sm:w-40"
+                      style={{
+                        borderColor: "var(--color-rule)",
+                        color: "var(--color-ink-4)",
+                      }}
+                    >
+                      image coming soon
+                    </div>
+                  )}
                 </div>
 
                 <div className="min-w-0 flex-1">

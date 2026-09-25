@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { asset } from "@/lib/asset";
 import { people } from "@/data/people";
 import { pi } from "@/data/pi";
 import { PeopleGroup } from "@/components/PeopleGroup";
@@ -17,6 +18,7 @@ const piAsPerson: Person = {
   slug: "bilin-zhuang",
   name: pi.name,
   role: `${pi.title}, ${pi.affiliation}`,
+  photo: asset("/images/people/bilin-zhuang.jpg"),
 };
 
 export default function TeamPage() {
@@ -26,8 +28,9 @@ export default function TeamPage() {
         <SectionNumber n={3} />
         <h1 className="display mt-5">team</h1>
         <p className="mt-5 max-w-[60ch] prose-body">
-          Built around undergraduate research at Harvey Mudd College, with
-          postdoctoral fellows and visiting collaborators.
+          The people who make the research happen: mostly undergraduates at
+          Harvey Mudd, plus postdocs, collaborators, and a lot of alumni we
+          are proud of.
         </p>
       </header>
 

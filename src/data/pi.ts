@@ -10,10 +10,10 @@ export const pi: PI = {
   tagline:
     "Soft-matter chemical physics — statistical thermodynamics and field-theoretic approaches to liquids, solutions, polyelectrolyte brushes, and phase separation, with undergraduates at Harvey Mudd College.",
   bio: [
-    "Bilin Zhuang works at the intersection of statistical thermodynamics and chemical physics, building field-theoretic and analytical theories that explain the structure, correlations, and phase behavior of polar liquids, electrolytes, polyelectrolyte brushes, and other soft-matter systems.",
-    "She is an Assistant Professor in the Department of Chemistry at Harvey Mudd College, where she leads the Zhuang Group. She joined HMC in 2023 after three years on the faculty of Yale-NUS College in Singapore, and a parallel appointment as a Scientist at the Institute of High Performance Computing (A*STAR), Singapore.",
-    "Her group develops first-principle theories of dipolar and polarizable liquids, mathematical descriptors of water structure, unified theories for polyelectrolyte brushes in salt solutions, and models of liquid–liquid phase separation. Recent work appears in Science Advances, JACS, J. Phys. Chem. Lett., and Macromolecules.",
-    "She earned her Ph.D. in Chemistry from the California Institute of Technology in 2016 under Professor Zhen-Gang Wang, with a dissertation on dipolar liquids and their mixtures using field-theoretic approaches. She holds a B.A. in Physics and Chemistry from Wellesley College (2009), where she was awarded the APS Leroy Apker Award.",
+    "I'm an Assistant Professor of Chemistry at Harvey Mudd College, where I lead the Zhuang Group. In the setting of a liberal arts college, I collaborate with young scientists on a range of projects, trying to understand the complex correlations and structure in liquids and to develop new tools to model them.",
+    "Before coming to Mudd in 2023, I spent three years on the faculty of Yale-NUS College in Singapore, while also working as a Scientist at the Institute of High Performance Computing (A*STAR). Over the years, my students and I have worked on theories of polar and polarizable liquids, ways to describe the structure of water, polyelectrolyte brushes in salt solutions, and liquid–liquid phase separation.",
+    "I have also had the fortune to teach a range of interesting courses, from statistical thermodynamics to the science of everyday cooking (and bread!). I always welcome comments and exchanges about these courses, so feel free to reach out.",
+    "Before all this, I did my Ph.D. in Chemistry at Caltech with Professor Zhen-Gang Wang, working on dipolar liquids and their mixtures with field-theoretic approaches, and my B.A. in Physics and Chemistry at Wellesley College, where I received the APS Leroy Apker Award.",
   ],
   portrait: asset("/images/bilin.jpg"),
 };

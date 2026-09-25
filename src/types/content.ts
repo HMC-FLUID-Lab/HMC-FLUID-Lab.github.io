@@ -41,6 +41,8 @@ export type Publication = {
   volume?: string;
   pages?: string;
   doi: string;
+  /** Authors (as written in `authors`, without markers) who were group members; rendered bold. */
+  groupAuthors?: string[];
   preprintUrl?: string;
   pdfUrl?: string;
   note?: string;

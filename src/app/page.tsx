@@ -52,17 +52,23 @@ export default function Home() {
           style={{ "--load-delay": "270ms" } as React.CSSProperties}
         >
           <p>
-            This group builds field-theoretic and analytical theories for
-            soft matter: the correlations that set the dielectric response of
-            polar and polarizable liquids, the local ordering that makes water
-            anomalous, the conformations polyelectrolyte brushes take in salt,
-            and the demixing behind liquid–liquid phase separation. The
-            derivations are tedious. The expressions they produce are usually
-            simple.
+            Hi! I&rsquo;m Bilin Zhuang, and I lead this group at Harvey Mudd
+            College. In the setting of a liberal arts college, I get to work
+            with young scientists on a range of projects, all circling one
+            question: what is really going on inside a liquid? We try to
+            understand the complex correlations and structure in liquids, and
+            we build new tools to model them.
           </p>
           <p>
-            Most of the work is done with Harvey Mudd undergraduates, and they
-            are named on the papers.
+            Lately that means a hybrid particle-field method for simulating
+            big molecules in solution, a puzzle about which molecules slip
+            through the kidney&rsquo;s filter, and our long-running work on
+            polar liquids, water, and polyelectrolyte brushes. The math can
+            get tedious, but the answers are often surprisingly simple.
+          </p>
+          <p>
+            Most of this work is done with undergraduates, and you&rsquo;ll
+            find their names on the papers.
           </p>
         </div>
 
@@ -86,7 +92,7 @@ export default function Home() {
       <section className="mt-20 lg:mt-28">
         <header className="mb-10">
           <p className="eyebrow mb-3">research</p>
-          <h2 className="display max-w-[24ch]">Four thrusts</h2>
+          <h2 className="display max-w-[24ch]">Five thrusts</h2>
         </header>
 
         <ol className="list-none space-y-8">
@@ -116,10 +122,11 @@ export default function Home() {
         </ol>
 
         <figure className="mt-14">
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
             <RevealGroup stagger={70}>
-              {research.map((thrust, i) =>
-                thrust.image ? (
+              {research
+                .filter((thrust): thrust is typeof thrust & { image: string } => !!thrust.image)
+                .map((thrust, i) => (
                   <Reveal key={thrust.slug} variant="scale">
                     <div
                       className="fig-thumb relative aspect-square overflow-hidden rounded-xl"
@@ -133,7 +140,7 @@ export default function Home() {
                         src={thrust.image}
                         alt={thrust.imageAlt ?? thrust.title}
                         fill
-                        sizes="(min-width: 640px) 240px, 45vw"
+                        sizes="(min-width: 1024px) 200px, (min-width: 640px) 30vw, 45vw"
                         className="object-contain p-3"
                       />
                       <span aria-hidden="true" className="fig-caption">
@@ -147,8 +154,7 @@ export default function Home() {
                       ({String.fromCharCode(97 + i)})
                     </p>
                   </Reveal>
-                ) : null,
-              )}
+                ))}
             </RevealGroup>
           </div>
           <Reveal variant="fade" delay={150}>
@@ -162,10 +168,11 @@ export default function Home() {
               >
                 Fig. 1
               </span>{" "}
-              Systems under study: (a) a cation in its shell of oriented solvent
-              dipoles, (b) the hydrogen-bonded tetrahedron of water, (c) a
-              polyelectrolyte brush and its counterions, (d) a phase-separated
-              droplet.
+              Systems under study: (a) a macromolecule with explicit solvent
+              nearby and a solvent field beyond, (b) the kidney&rsquo;s
+              glomerular filtration barrier, (c) a cation in its shell of
+              oriented solvent dipoles, (d) the hydrogen-bonded tetrahedron of
+              water, and (e) a polyelectrolyte brush and its counterions.
             </figcaption>
           </Reveal>
         </figure>

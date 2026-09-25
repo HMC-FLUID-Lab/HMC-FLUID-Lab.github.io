@@ -1,4 +1,5 @@
 import type { People } from "@/types/content";
+import { asset } from "@/lib/asset";
 
 export const people: People = {
   postdoc: [
@@ -7,6 +8,7 @@ export const people: People = {
       name: "Haiqin Wang",
       role: "Postdoctoral Fellow",
       linkedIn: "https://www.linkedin.com/in/haiqin-wang-212aa7100/",
+      photo: asset("/images/people/haiqin-wang.jpg"),
     },
   ],
   current: [
@@ -15,6 +17,7 @@ export const people: People = {
       name: "Zoe He",
       role: "Undergraduate Researcher",
       classYear: "HMC '27",
+      photo: asset("/images/people/zoe-he.jpg"),
     },
     {
       slug: "selina-yao",
@@ -35,6 +38,7 @@ export const people: People = {
       role: "Undergraduate Researcher",
       classYear: "HMC '27",
       linkedIn: "https://www.linkedin.com/in/yuki-watanabe-/",
+      photo: asset("/images/people/yuki-watanabe.jpg"),
     },
     {
       slug: "silas-brock",
@@ -56,6 +60,20 @@ export const people: People = {
       role: "Undergraduate Researcher",
       classYear: "HMC '29",
       linkedIn: "https://www.linkedin.com/in/yiqi-yao-michael/",
+      photo: asset("/images/people/michael-yao.jpg"),
+    },
+    {
+      slug: "justin-dong",
+      name: "Justin Dong",
+      role: "Undergraduate Researcher",
+      linkedIn: "https://www.linkedin.com/in/justine-dong-a7619a382/",
+      photo: asset("/images/people/justin-dong.jpg"),
+    },
+    {
+      slug: "alyssa-hill",
+      name: "Alyssa Hill",
+      role: "Undergraduate Researcher",
+      linkedIn: "https://www.linkedin.com/in/alyssa-hill-628318530-/",
     },
   ],
   alumni: {
@@ -143,27 +161,171 @@ export const people: People = {
       {
         slug: "phoebe-rosa-virginia",
         name: "Phoebe Rosa Virginia",
-        role: "Undergraduate Alum (thesis 2023)",
-        classYear: "YNC",
+        role: "Undergraduate Alum (Capstone Thesis 2023)",
+        classYear: "YNC '23",
       },
       {
         slug: "garima-chib",
         name: "Garima Chib",
-        role: "Undergraduate Alum (thesis 2023)",
-        classYear: "YNC",
+        role: "Undergraduate Alum (Capstone Thesis 2023)",
+        classYear: "YNC '23",
       },
       {
         slug: "samen-yasar",
         name: "Samen Yasar",
+        role: "Research Assistant (2022–2023)",
+        classYear: "YNC '21",
+      },
+      {
+        slug: "samantha-ma-wanxuan",
+        name: "Samantha Ma Wanxuan",
+        role: "Research Assistant (2020–2021)",
+      },
+      {
+        slug: "devendra-neupane",
+        name: "Devendra Neupane",
+        role: "Undergraduate Alum (Capstone Thesis 2021)",
+        classYear: "YNC '21",
+      },
+      {
+        slug: "alexander-reaves",
+        name: "Alexander Reaves",
+        role: "Undergraduate Alum (Capstone Thesis 2021)",
+        classYear: "YNC '21",
+      },
+      {
+        slug: "gabriele-ramanauskaite",
+        name: "Gabriele Ramanauskaite",
         role: "Undergraduate Alum",
-        classYear: "YNC",
+        classYear: "YNC '22",
+      },
+      {
+        slug: "minwoo-choi",
+        name: "Minwoo Choi",
+        role: "Undergraduate Alum",
+        classYear: "YNC '22",
+      },
+      {
+        slug: "dragan-kantar",
+        name: "Dragan Kantar",
+        role: "Undergraduate Alum",
+        classYear: "YNC '22",
+      },
+      {
+        slug: "ozair-faisal",
+        name: "Ozair Faisal",
+        role: "Undergraduate Alum",
+        classYear: "YNC '23",
+      },
+      {
+        slug: "koa-zhao-yuan",
+        name: "Koa Zhao Yuan",
+        role: "Undergraduate Alum",
+        classYear: "YNC '23",
+      },
+      {
+        slug: "niall-nishid-shah",
+        name: "Niall Nishid Shah",
+        role: "Undergraduate Alum",
+        classYear: "YNC '24",
+      },
+      {
+        slug: "rinat-musin-ravshanovich",
+        name: "Rinat Musin Ravshanovich",
+        role: "Undergraduate Alum",
+        classYear: "YNC '24",
+      },
+      {
+        slug: "eo-joonghyun",
+        name: "Eo Joonghyun",
+        role: "Undergraduate Alum",
+        classYear: "YNC '24",
+      },
+      {
+        slug: "howe-ying-yi",
+        name: "Howe Ying Yi",
+        role: "Undergraduate Alum",
+        classYear: "YNC '24",
+      },
+      {
+        slug: "marcellinus-jerricho",
+        name: "Marcellinus Jerricho",
+        role: "Undergraduate Alum",
+        classYear: "YNC '24",
+      },
+      {
+        slug: "nay-chi-wint-naing",
+        name: "Nay Chi Wint Naing",
+        role: "Undergraduate Alum",
+        classYear: "YNC '24",
+      },
+      {
+        slug: "mira-dewan",
+        name: "Mira Dewan",
+        role: "Undergraduate Alum",
+        classYear: "YNC '24",
+      },
+      {
+        slug: "mohammad-dabeer-ahmed",
+        name: "Mohammad Dabeer Ahmed",
+        role: "Undergraduate Alum",
+        classYear: "YNC '25",
+      },
+      {
+        slug: "ansh-akshintulu",
+        name: "Ansh Akshintulu",
+        role: "Undergraduate Alum",
+        classYear: "YNC '25",
+      },
+      {
+        slug: "akanksha-devang-chokshi",
+        name: "Akanksha Devang Chokshi",
+        role: "Undergraduate Alum",
+        classYear: "YNC '25",
       },
     ],
     highSchool: [
       {
-        slug: "hs-alum-1",
-        name: "High School Researchers (2018–2021)",
-        role: "From NUS High School for Mathematics and Sciences and Hwa Chong Junior College",
+        slug: "eveleigh-ng",
+        name: "Eveleigh Ng",
+        role: "NUS High School for Mathematics and Sciences",
+        classYear: "2021",
+      },
+      {
+        slug: "jia-le-ng",
+        name: "Jia Le Ng",
+        role: "NUS High School for Mathematics and Sciences",
+        classYear: "2021",
+      },
+      {
+        slug: "jonas-tang",
+        name: "Jonas Tang",
+        role: "NUS High School for Mathematics and Sciences",
+        classYear: "2021",
+      },
+      {
+        slug: "vishal-mohanty",
+        name: "Vishal Mohanty",
+        role: "NUS High School for Mathematics and Sciences",
+        classYear: "2020",
+      },
+      {
+        slug: "winnie-lim",
+        name: "Winnie Lim",
+        role: "Hwa Chong Junior College",
+        classYear: "2018",
+      },
+      {
+        slug: "yu-jer-hsiao",
+        name: "Yu Jer Hsiao",
+        role: "NUS High School for Mathematics and Sciences",
+        classYear: "2018",
+      },
+      {
+        slug: "junwei-wang",
+        name: "Junwei Wang",
+        role: "National Junior College",
+        classYear: "2018",
       },
     ],
   },

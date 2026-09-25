@@ -5,7 +5,7 @@ import { SectionNumber } from "@/components/SectionNumber";
 
 export const metadata: Metadata = {
   title: "publications-fluid",
-  description: "Complete list of publications from the FLUID Lab, 2010–2025.",
+  description: "Complete list of publications from the FLUID Lab, 2010–2026.",
 };
 
 export default function PublicationsPage() {

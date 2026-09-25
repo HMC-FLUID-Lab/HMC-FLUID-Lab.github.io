@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { pi, education, appointments, awards } from "@/data/pi";
-import { talks } from "@/data/talks";
+import { publications } from "@/data/publications";
+import { Authors } from "./Authors";
 import { Timeline } from "./Timeline";
 import { Reveal } from "./Reveal";
 
@@ -75,6 +76,11 @@ function DatedList({
   );
 }
 
+/** The newest papers, at most one per journal, so the list shows range. */
+const recentPublications = publications
+  .filter((p, i, all) => all.findIndex((q) => q.venue === p.venue) === i)
+  .slice(0, 3);
+
 export function PIProfile() {
   return (
     <>
@@ -112,7 +118,7 @@ export function PIProfile() {
 
         <div className="grid gap-10 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1.6fr)] lg:gap-14">
           <figure
-            className="halo load-in"
+            className="halo load-in w-[85%]"
             style={{ "--load-delay": "360ms" } as React.CSSProperties}
           >
             <div
@@ -203,33 +209,38 @@ export function PIProfile() {
           </Reveal>
         </div>
 
-        {/* Awards and talks run as a pair, three each, so the two
-            columns stay short and end together. The full record lives
-            in the CV. */}
+        {/* Awards and recent publications run as a pair, three each, so
+            the two columns stay short and end together. The full record
+            lives in the CV and on the publications page. */}
         <div className="mt-14 grid gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-14">
           <Reveal variant="up" delay={80}>
             <Timeline heading="Awards & Recognition" rows={awards.slice(0, 3)} />
           </Reveal>
           <Reveal variant="up" delay={160}>
             <DatedList
-              heading="Talks & Presentations"
-              items={talks.slice(0, 3).map((t) => ({
-                key: t.id,
-                when: String(t.year),
+              heading="Recent Publications"
+              items={recentPublications.map((p) => ({
+                key: p.id,
+                when: String(p.year),
                 title: (
+                  <a
+                    href={`https://doi.org/${p.doi}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="link-underline"
+                  >
+                    {p.title}
+                  </a>
+                ),
+                meta: (
                   <>
-                    {t.title}
-                    {t.invited ? (
-                      <span
-                        className="ml-2 align-middle font-mono text-[0.625rem] uppercase tracking-[0.12em]"
-                        style={{ color: "var(--color-accent)" }}
-                      >
-                        invited
-                      </span>
-                    ) : null}
+                    <Authors authors={p.authors} groupAuthors={p.groupAuthors} />
+                    <span style={{ color: "var(--color-ink-3)" }}>
+                      {" · "}
+                      <span className="italic">{p.venue}</span>
+                    </span>
                   </>
                 ),
-                meta: `${t.venue} · ${t.location}`,
               }))}
             />
           </Reveal>

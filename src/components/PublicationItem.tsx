@@ -1,11 +1,12 @@
 import type { Publication } from "@/types/content";
+import { Authors } from "./Authors";
 
 type Props = {
   publication: Publication;
 };
 
 export function PublicationItem({ publication }: Props) {
-  const { authors, title, venue, year, volume, pages, doi, preprintUrl, pdfUrl } =
+  const { authors, groupAuthors, title, venue, year, volume, pages, doi, preprintUrl, pdfUrl } =
     publication;
   const doiUrl = `https://doi.org/${doi}`;
   return (
@@ -17,7 +18,7 @@ export function PublicationItem({ publication }: Props) {
           letterSpacing: "-0.005em",
         }}
       >
-        {authors}
+        <Authors authors={authors} groupAuthors={groupAuthors} />
       </p>
       <h3 className="mt-1.5 text-base font-medium leading-snug text-[color:var(--color-ink)]">
         <a

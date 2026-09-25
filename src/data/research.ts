@@ -3,6 +3,34 @@ import { asset } from "@/lib/asset";
 
 export const research: Thrust[] = [
   {
+    slug: "hybrid-particle-field-simulation",
+    title: "Hybrid Adaptive Particle-Field Simulation Method for Solvated Systems",
+    summary:
+      "A simulation method that keeps atomistic detail only where it matters — treating solvent as particles near a macromolecule and as a field elsewhere — to make large solvated systems tractable.",
+    fullDescription: [
+      "All-atom simulations are great for studying how molecules interact, but they get very expensive for large molecules in solution, like the DNA in our bodies, because of all the solvent around them.",
+      "We are developing a hybrid adaptive particle-field method that keeps full atomistic detail only near the macromolecule and treats the solvent farther away as a field. The two regions adapt to the molecule's shape on the fly, with no hard boundary between them, so we can simulate large molecules in solution much faster.",
+    ],
+    image: asset("/images/research/hybrid-particle-field.png"),
+    imageAlt:
+      "A polymer chain surrounded by nearby water molecules, fading into a blue continuous background.",
+    keyPublicationDois: [],
+  },
+  {
+    slug: "kidney-filtration",
+    title: "How Large Is Too Large? Deciphering the Rule for Molecular Size in Kidney Filtration",
+    summary:
+      "Why do large, flexible molecules like dextran pass the kidney’s filtration barrier while smaller, globular albumin is retained? We look for the physical rule behind glomerular size selectivity.",
+    fullDescription: [
+      "More than 10% of the world’s population is affected by kidney disease, and many cases originate from problems with the glomerulus, the filtration unit of the nephron. The kidney glomerulus filters blood into the urine, allowing water, sugar, and metabolic waste to pass through, while keeping essential proteins in blood without clogging the filter. It is not well understood why larger, flexible molecules such as dextran can pass through this filtration barrier, whereas smaller but globular proteins like albumin are mostly retained.",
+      "Several sub-projects are possible: (1) Can we quantitatively measure the effective size of macromolecules in kidney filtration? (2) Can we elucidate the physical mechanisms underlying proteinuria and chronic kidney disease? (3) How do biological forces and fluid flow influence glomerular filtration?",
+    ],
+    keyPublicationDois: [],
+    image: asset("/images/research/kidney-filtration.png"),
+    imageAlt:
+      "Cross-section of the glomerular filtration barrier: podocyte foot processes, basement membrane, and endothelium, with albumin retained in blood and dextran passing into urine.",
+  },
+  {
     slug: "polar-liquids-field-theory",
     title: "Statistical Field Theory for Polar and Polarizable Liquids",
     summary:
@@ -53,21 +81,5 @@ export const research: Thrust[] = [
     image: asset("/images/research/polyelectrolyte-brushes.png"),
     imageAlt:
       "Polyelectrolyte brush with counterions and a plot of brush height versus salt concentration for +1, +2, +3 ion valencies.",
-  },
-  {
-    slug: "liquid-liquid-phase-separation",
-    title: "Liquid-Liquid Phase Separation",
-    summary:
-      "Spontaneous droplet formation in cellular environments and confined geometries — with applications to active-ingredient encapsulation and biomolecular condensates.",
-    fullDescription: [
-      "Liquid-liquid phase separation underlies the formation of biomolecular condensates in cells and provides a route to encapsulate active ingredients in soft materials. We study how electrostatics, confinement, and copolymer architecture drive demixing.",
-      "Outputs from this thrust include a salt-induced LLPS theory and a thesis-level study of LLPS in confined geometry under an electric field.",
-    ],
-    keyPublicationDois: [
-      "10.1021/jacs.0c09420",
-    ],
-    image: asset("/images/research/llps.png"),
-    imageAlt:
-      "Liquid–liquid phase-separated droplet containing polymer chains and counterions.",
   },
 ];

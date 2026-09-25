@@ -2,6 +2,26 @@ import type { Publication } from "@/types/content";
 
 export const publications: Publication[] = [
   {
+    id: "varner-2026-jcp",
+    authors: "S. Varner†, P. J. Walker†, A. Venkatachalam†‡, B. Zhuang*, Z.-G. Wang*",
+    groupAuthors: ["A. Venkatachalam"],
+    title: "Stockmayer fluid with a shifted dipole. II. Interfacial behavior",
+    venue: "Journal of Chemical Physics",
+    year: 2026,
+    volume: "164",
+    doi: "10.1063/5.0331066",
+  },
+  {
+    id: "walker-2026-jcp",
+    authors: "P. J. Walker†, A. Venkatachalam†‡, S. Varner†, B. Zhuang*, Z.-G. Wang*",
+    groupAuthors: ["A. Venkatachalam"],
+    title: "Stockmayer fluid with a shifted dipole. I. Bulk behavior",
+    venue: "Journal of Chemical Physics",
+    year: 2026,
+    volume: "164",
+    doi: "10.1063/5.0331053",
+  },
+  {
     id: "li-2025-giant",
     authors: "M. Li, M. Ruths, B. Zhuang*, J. Yu*",
     title:
@@ -23,6 +43,7 @@ export const publications: Publication[] = [
     volume: "9",
     pages: "905–916",
     doi: "10.1038/s41551-024-01288-2",
+    groupAuthors: ["J. Tong"],
   },
   {
     id: "li-2024-macromol",
@@ -34,6 +55,7 @@ export const publications: Publication[] = [
     volume: "57",
     pages: "3026–3036",
     doi: "10.1021/acs.macromol.3c01800",
+    groupAuthors: ["S. Yasar"],
   },
   {
     id: "maturi-2024-jpcl",
@@ -57,6 +79,7 @@ export const publications: Publication[] = [
     volume: "7",
     pages: "025006",
     doi: "10.1088/2515-7639/ad26b2",
+    groupAuthors: ["J. Tong"],
   },
   {
     id: "mesilov-2023-jpcc",
@@ -69,6 +92,7 @@ export const publications: Publication[] = [
     volume: "127",
     pages: "11490–11505",
     doi: "10.1021/acs.jpcc.3c00488",
+    groupAuthors: ["V. Mesilov"],
   },
   {
     id: "li-2022-macromol",
@@ -122,6 +146,7 @@ export const publications: Publication[] = [
     volume: "7",
     pages: "eabe7275",
     doi: "10.1126/sciadv.abe7275",
+    groupAuthors: ["G. Ramanauskaite", "Z. Y. Koa"],
   },
   {
     id: "brites-2020-jpcl",
@@ -134,6 +159,7 @@ export const publications: Publication[] = [
     volume: "11",
     pages: "4704",
     doi: "10.1021/acs.jpclett.0c02147",
+    groupAuthors: ["W. W. Y. Lim"],
   },
   {
     id: "li-2020-asianj",
