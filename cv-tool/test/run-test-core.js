@@ -9,7 +9,7 @@ const C = require("../src/core.js");
 
 const ROOT = path.join(__dirname, "..");
 const DATA = path.join(ROOT, "..", "src", "data");
-const CV = path.join(ROOT, "..", "public", "bilin_zhuang_cv_2024jun.pdf");
+const CV = path.join(ROOT, "..", "public", "bilin_zhuang_cv_2026jul.pdf");
 
 let checks = 0;
 function check(label, fn) {
