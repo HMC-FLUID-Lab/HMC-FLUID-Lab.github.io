@@ -1,25 +1,25 @@
 import type { Publication } from "@/types/content";
 
+/** Papers counted, not entries: a multi-part entry counts once per part. */
+export function paperCount(list: Publication[]): number {
+  return list.reduce((n, p) => n + 1 + (p.moreParts?.length ?? 0), 0);
+}
+
 export const publications: Publication[] = [
+  // Two-part paper shown as one entry. Authors are Part I's order; Part II
+  // lists Varner first (all three are co-first authors).
   {
-    id: "varner-2026-jcp",
-    authors: "S. Varner†, P. J. Walker†, A. Venkatachalam†‡, B. Zhuang*, Z.-G. Wang*",
-    groupAuthors: ["A. Venkatachalam"],
-    title: "Stockmayer fluid with a shifted dipole. II. Interfacial behavior",
-    venue: "Journal of Chemical Physics",
-    year: 2026,
-    volume: "164",
-    doi: "10.1063/5.0331066",
-  },
-  {
-    id: "walker-2026-jcp",
+    id: "stockmayer-2026-jcp",
     authors: "P. J. Walker†, A. Venkatachalam†‡, S. Varner†, B. Zhuang*, Z.-G. Wang*",
     groupAuthors: ["A. Venkatachalam"],
-    title: "Stockmayer fluid with a shifted dipole. I. Bulk behavior",
+    title:
+      "Stockmayer fluid with a shifted dipole. I. Bulk behavior & II. Interfacial behavior",
     venue: "Journal of Chemical Physics",
     year: 2026,
     volume: "164",
     doi: "10.1063/5.0331053",
+    doiLabel: "Part I",
+    moreParts: [{ label: "Part II", doi: "10.1063/5.0331066" }],
   },
   {
     id: "li-2025-giant",

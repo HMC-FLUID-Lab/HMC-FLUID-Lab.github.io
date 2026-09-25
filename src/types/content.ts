@@ -41,6 +41,12 @@ export type Publication = {
   volume?: string;
   pages?: string;
   doi: string;
+  /**
+   * For a multi-part paper shown as one entry: a label for each part's
+   * DOI link. `doi` is the first part; `moreParts` lists the rest.
+   */
+  doiLabel?: string;
+  moreParts?: { label: string; doi: string }[];
   /** Authors (as written in `authors`, without markers) who were group members; rendered bold. */
   groupAuthors?: string[];
   preprintUrl?: string;

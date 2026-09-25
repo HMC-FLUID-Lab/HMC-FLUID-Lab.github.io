@@ -7,9 +7,12 @@ import { Reveal } from "./Reveal";
 /** A dated list that borrows Timeline's grammar for non-TimelineRow content. */
 function DatedList({
   heading,
+  index,
   items,
 }: {
   heading: string;
+  /** Position of this section on the page, shown as [01], [02], … */
+  index: number;
   items: Array<{
     key: string;
     when: string;
@@ -27,7 +30,7 @@ function DatedList({
           className="font-mono text-xs"
           style={{ color: "var(--color-ink-4)" }}
         >
-          [{String(items.length).padStart(2, "0")}]
+          [{String(index).padStart(2, "0")}]
         </span>
       </h2>
       <ul
@@ -196,10 +199,10 @@ export function PIProfile() {
 
         <div className="mt-14 grid gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-14">
           <Reveal variant="up" delay={80}>
-            <Timeline heading="Education" rows={education} />
+            <Timeline heading="Education" index={1} rows={education} />
           </Reveal>
           <Reveal variant="up" delay={160}>
-            <Timeline heading="Appointments" rows={appointments} />
+            <Timeline heading="Appointments" index={2} rows={appointments} />
           </Reveal>
         </div>
 
@@ -208,11 +211,12 @@ export function PIProfile() {
             in the CV. */}
         <div className="mt-14 grid gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-14">
           <Reveal variant="up" delay={80}>
-            <Timeline heading="Awards & Recognition" rows={awards.slice(0, 3)} />
+            <Timeline heading="Awards & Recognition" index={3} rows={awards.slice(0, 3)} />
           </Reveal>
           <Reveal variant="up" delay={160}>
             <DatedList
               heading="Resources for the Community"
+              index={4}
               items={resources.map((r) => ({
                 key: r.id,
                 when: r.tag,

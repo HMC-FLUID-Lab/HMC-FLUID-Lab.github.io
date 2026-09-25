@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { Publication } from "@/types/content";
 import { PublicationItem } from "./PublicationItem";
+import { paperCount } from "@/data/publications";
 
 type Props = {
   publications: Publication[];
@@ -46,7 +47,7 @@ export function PublicationsList({ publications }: Props) {
       <div className="mb-8 flex flex-wrap gap-2">
         <FilterChip active={active === null} onClick={() => setActive(null)}>
           all
-          <span className="chip-count">{publications.length}</span>
+          <span className="chip-count">{paperCount(publications)}</span>
         </FilterChip>
         {buckets.map((b) => (
           <FilterChip
@@ -56,7 +57,7 @@ export function PublicationsList({ publications }: Props) {
           >
             {b.label}
             <span className="chip-count">
-              {publications.filter((p) => inBucket(p.year, b)).length}
+              {paperCount(publications.filter((p) => inBucket(p.year, b)))}
             </span>
           </FilterChip>
         ))}

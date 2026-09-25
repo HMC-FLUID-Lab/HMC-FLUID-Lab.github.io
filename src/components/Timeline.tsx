@@ -3,6 +3,8 @@ import { Reveal, RevealGroup } from "./Reveal";
 
 type Props = {
   heading: string;
+  /** Position of this section on the page, shown as [01], [02], … */
+  index: number;
   rows: Array<TimelineRow | EducationRow>;
 };
 
@@ -10,7 +12,7 @@ function isEducation(row: TimelineRow | EducationRow): row is EducationRow {
   return "dissertation" in row || "advisor" in row;
 }
 
-export function Timeline({ heading, rows }: Props) {
+export function Timeline({ heading, index, rows }: Props) {
   return (
     <section>
       <h2 className="h2 mb-6 flex items-baseline gap-3">
@@ -20,7 +22,7 @@ export function Timeline({ heading, rows }: Props) {
           className="font-mono text-xs"
           style={{ color: "var(--color-ink-4)" }}
         >
-          [{String(rows.length).padStart(2, "0")}]
+          [{String(index).padStart(2, "0")}]
         </span>
       </h2>
       <ul

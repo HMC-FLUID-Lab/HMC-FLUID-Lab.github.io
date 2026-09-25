@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { publications } from "@/data/publications";
+import { publications, paperCount } from "@/data/publications";
 import { PublicationsList } from "@/components/PublicationsList";
 import { SectionNumber } from "@/components/SectionNumber";
 
@@ -31,7 +31,7 @@ export default function PublicationsPage() {
               fontVariantNumeric: "tabular-nums lining-nums",
             }}
           >
-            {publications.length}
+            {paperCount(publications)}
           </span>
           <span>papers</span>
           <span aria-hidden="true" style={{ color: "var(--color-ink-4)" }}>

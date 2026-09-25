@@ -6,7 +6,7 @@ type Props = {
 };
 
 export function PublicationItem({ publication }: Props) {
-  const { authors, groupAuthors, title, venue, year, volume, pages, doi, preprintUrl, pdfUrl } =
+  const { authors, groupAuthors, title, venue, year, volume, pages, doi, doiLabel, moreParts, preprintUrl, pdfUrl } =
     publication;
   const doiUrl = `https://doi.org/${doi}`;
   return (
@@ -48,8 +48,20 @@ export function PublicationItem({ publication }: Props) {
           className="text-xs font-medium tracking-[-0.005em] transition-colors hover:text-[color:var(--color-accent)] focus-visible:text-[color:var(--color-accent)]"
           style={{ color: "var(--color-ink-3)" }}
         >
-          DOI <span aria-hidden="true">→</span>
+          {doiLabel ? `${doiLabel} DOI` : "DOI"} <span aria-hidden="true">→</span>
         </a>
+        {moreParts?.map((part) => (
+          <a
+            key={part.doi}
+            href={`https://doi.org/${part.doi}`}
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs font-medium tracking-[-0.005em] transition-colors hover:text-[color:var(--color-accent)] focus-visible:text-[color:var(--color-accent)]"
+            style={{ color: "var(--color-ink-3)" }}
+          >
+            {part.label} DOI <span aria-hidden="true">→</span>
+          </a>
+        ))}
         {preprintUrl ? (
           <a
             href={preprintUrl}
