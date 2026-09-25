@@ -218,7 +218,7 @@ export function PIProfile() {
           </Reveal>
           <Reveal variant="up" delay={160}>
             <DatedList
-              heading="Recent Publications"
+              heading="Recent Publications & Updates"
               items={recentPublications.map((p) => ({
                 key: p.id,
                 when: String(p.year),
