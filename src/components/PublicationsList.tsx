@@ -8,47 +8,56 @@ type Props = {
   publications: Publication[];
 };
 
-export function PublicationsList({ publications }: Props) {
-  const years = useMemo(
-    () =>
-      Array.from(new Set(publications.map((p) => p.year))).sort((a, b) => b - a),
-    [publications],
-  );
+/** Years that get their own chip; everything older shares one range chip. */
+const SEPARATE_YEARS = 4;
 
-  const countByYear = useMemo(() => {
-    const m = new Map<number, number>();
-    for (const p of publications) m.set(p.year, (m.get(p.year) ?? 0) + 1);
-    return m;
+type Bucket = { label: string; from: number; to: number };
+
+export function PublicationsList({ publications }: Props) {
+  const buckets = useMemo<Bucket[]>(() => {
+    const years = Array.from(new Set(publications.map((p) => p.year))).sort(
+      (a, b) => b - a,
+    );
+    const recent = years.slice(0, SEPARATE_YEARS);
+    const older = years.slice(SEPARATE_YEARS);
+    const out: Bucket[] = recent.map((y) => ({ label: String(y), from: y, to: y }));
+    if (older.length > 0) {
+      const to = older[0];
+      const from = older[older.length - 1];
+      out.push({ label: `${to}–${from}`, from, to });
+    }
+    return out;
   }, [publications]);
 
-  const [activeYear, setActiveYear] = useState<number | null>(null);
+  const [active, setActive] = useState<Bucket | null>(null);
+
+  const inBucket = (year: number, b: Bucket) => year >= b.from && year <= b.to;
 
   const filtered = useMemo(
     () =>
-      activeYear === null
+      active === null
         ? publications
-        : publications.filter((p) => p.year === activeYear),
-    [activeYear, publications],
+        : publications.filter((p) => inBucket(p.year, active)),
+    [active, publications],
   );
 
   return (
     <div>
       <div className="mb-8 flex flex-wrap gap-2">
-        <FilterChip
-          active={activeYear === null}
-          onClick={() => setActiveYear(null)}
-        >
+        <FilterChip active={active === null} onClick={() => setActive(null)}>
           all
           <span className="chip-count">{publications.length}</span>
         </FilterChip>
-        {years.map((y) => (
+        {buckets.map((b) => (
           <FilterChip
-            key={y}
-            active={activeYear === y}
-            onClick={() => setActiveYear(y)}
+            key={b.label}
+            active={active?.label === b.label}
+            onClick={() => setActive(b)}
           >
-            {y}
-            <span className="chip-count">{countByYear.get(y)}</span>
+            {b.label}
+            <span className="chip-count">
+              {publications.filter((p) => inBucket(p.year, b)).length}
+            </span>
           </FilterChip>
         ))}
       </div>
@@ -58,10 +67,10 @@ export function PublicationsList({ publications }: Props) {
           aria-live="polite"
           className="border-t border-[color:var(--color-rule)] py-8 small text-[color:var(--color-ink-3)]"
         >
-          No publications in {activeYear}.{" "}
+          No publications in {active?.label}.{" "}
           <button
             type="button"
-            onClick={() => setActiveYear(null)}
+            onClick={() => setActive(null)}
             className="link-underline text-[color:var(--color-ink-2)]"
           >
             Show all
@@ -70,7 +79,7 @@ export function PublicationsList({ publications }: Props) {
         </p>
       ) : (
         <ol
-          key={activeYear ?? "all"}
+          key={active?.label ?? "all"}
           className="list-none border-t"
           style={{ borderColor: "var(--color-rule)" }}
         >
