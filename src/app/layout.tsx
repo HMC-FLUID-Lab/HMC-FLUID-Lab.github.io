@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ohhmoo.github.io/FLUID-LabSite";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hmc-fluid-lab.github.io";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
