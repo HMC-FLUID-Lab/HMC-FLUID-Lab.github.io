@@ -58,6 +58,16 @@ export type Talk = {
   year: number;
 };
 
+/** A teaching or outreach resource shared with the community. */
+export type Resource = {
+  id: string;
+  /** Short tag shown in the dated-list gutter, e.g. a course code. */
+  tag: string;
+  title: string;
+  description: string;
+  url: string;
+};
+
 /** A course taught. `terms` stays prose because the CV writes it that way. */
 export type Course = {
   id: string;

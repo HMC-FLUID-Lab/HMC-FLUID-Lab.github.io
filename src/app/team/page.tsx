@@ -35,7 +35,7 @@ export default function TeamPage() {
       </header>
 
       <Reveal variant="up">
-        <section>
+        <section className="pb-10">
           <h2 className="eyebrow mb-6">Principal Investigator</h2>
           <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             <PersonCard person={piAsPerson} />

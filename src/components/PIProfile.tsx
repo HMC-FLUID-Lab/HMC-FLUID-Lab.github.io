@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { pi, education, appointments, awards } from "@/data/pi";
-import { publications } from "@/data/publications";
-import { Authors } from "./Authors";
+import { resources } from "@/data/resources";
 import { Timeline } from "./Timeline";
 import { Reveal } from "./Reveal";
 
@@ -75,11 +74,6 @@ function DatedList({
     </section>
   );
 }
-
-/** The newest papers, at most one per journal, so the list shows range. */
-const recentPublications = publications
-  .filter((p, i, all) => all.findIndex((q) => q.venue === p.venue) === i)
-  .slice(0, 3);
 
 export function PIProfile() {
   return (
@@ -209,38 +203,30 @@ export function PIProfile() {
           </Reveal>
         </div>
 
-        {/* Awards and recent publications run as a pair, three each, so
-            the two columns stay short and end together. The full record
-            lives in the CV and on the publications page. */}
+        {/* Awards and community resources run as a pair so the two
+            columns stay short and end together. The full record lives
+            in the CV. */}
         <div className="mt-14 grid gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-14">
           <Reveal variant="up" delay={80}>
             <Timeline heading="Awards & Recognition" rows={awards.slice(0, 3)} />
           </Reveal>
           <Reveal variant="up" delay={160}>
             <DatedList
-              heading="Recent Publications & Updates"
-              items={recentPublications.map((p) => ({
-                key: p.id,
-                when: String(p.year),
+              heading="Resources for the Community"
+              items={resources.map((r) => ({
+                key: r.id,
+                when: r.tag,
                 title: (
                   <a
-                    href={`https://doi.org/${p.doi}`}
+                    href={r.url}
                     target="_blank"
                     rel="noreferrer"
                     className="link-underline"
                   >
-                    {p.title}
+                    {r.title}
                   </a>
                 ),
-                meta: (
-                  <>
-                    <Authors authors={p.authors} groupAuthors={p.groupAuthors} />
-                    <span style={{ color: "var(--color-ink-3)" }}>
-                      {" · "}
-                      <span className="italic">{p.venue}</span>
-                    </span>
-                  </>
-                ),
+                meta: r.description,
               }))}
             />
           </Reveal>
