@@ -6,7 +6,7 @@ export const pi: PI = {
   title: "Assistant Professor of Chemistry",
   affiliation: "Harvey Mudd College",
   email: "bzhuang@g.hmc.edu",
-  cvUrl: asset("/bilin_zhuang_cv_2024jun.pdf"),
+  cvUrl: asset("/bilin_zhuang_cv_2026jul.pdf"),
   tagline:
     "Soft-matter chemical physics — statistical thermodynamics and field-theoretic approaches to liquids, solutions, polyelectrolyte brushes, and phase separation, with undergraduates at Harvey Mudd College.",
   bio: [
