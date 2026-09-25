@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const routes = [
-  { href: "/bilin", label: "bilin" },
+  { href: "/", label: "bilin" },
   { href: "/research", label: "research" },
   { href: "/publications", label: "publications" },
   { href: "/team", label: "team" },
@@ -84,7 +84,7 @@ export function SiteHeader() {
         >
           {routes.map((r) => {
             const isActive =
-              current === r.href || (r.href === "/bilin" && current === "/");
+              current === r.href || (r.href === "/" && current === "/bilin");
             return (
               <Link
                 key={r.href}
