@@ -12,8 +12,8 @@ export const pi: PI = {
   bio: [
     "I'm an Assistant Professor of Chemistry at Harvey Mudd College, where I lead the Zhuang Group. In the setting of a liberal arts college, I collaborate with young scientists on a range of projects, trying to understand the complex correlations and structure in liquids and to develop new tools to model them.",
     "Before coming to Mudd in 2023, I spent three years on the faculty of Yale-NUS College in Singapore, while also working as a Scientist at the Institute of High Performance Computing (A*STAR). Over the years, my students and I have worked on theories of polar and polarizable liquids, ways to describe the structure of water, polyelectrolyte brushes in salt solutions, and liquid–liquid phase separation.",
-    "I have also had the fortune to teach a range of interesting courses, from statistical thermodynamics to the science of everyday cooking (and bread!). I always welcome comments and exchanges about these courses, so feel free to reach out.",
-    "Before all this, I did my Ph.D. in Chemistry at Caltech with Professor Zhen-Gang Wang, working on dipolar liquids and their mixtures with field-theoretic approaches, and my B.A. in Physics and Chemistry at Wellesley College, where I received the APS Leroy Apker Award.",
+    "I have also had the fortune to teach a range of interesting courses, including a one-semester introduction to physical chemistry, an introduction to computation in chemistry for first-year undergraduates, graduate-level statistical thermodynamics for advanced undergraduates, and the science of everyday cooking (and bread!). I always welcome comments and exchanges about these courses, so feel free to reach out.",
+    "Before all this, I did my Ph.D. in Chemistry at Caltech with Professor Zhen-Gang Wang, working on dipolar liquids and their mixtures with field-theoretic approaches, and my B.A. in Physics and Chemistry at Wellesley College, where I worked with Professor Courtney Lannert on angry states (frustration) and with Professor Mala Radhakrishnan on likable states (binding).",
   ],
   portrait: asset("/images/bilin.jpg"),
 };
