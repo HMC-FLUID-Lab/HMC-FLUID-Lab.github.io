@@ -113,6 +113,15 @@ export const people: People = {
         linkedIn: "https://www.linkedin.com/in/liselotte-ryan/",
       },
       {
+        slug: "bam-sindhurattavej",
+        name: "Bam Sindhurattavej",
+        role: "Undergraduate Alum",
+        classYear: "HMC '26",
+        linkedIn:
+          "https://www.linkedin.com/in/natchayaporn-sindhurattavej-a35877194/",
+        photo: asset("/images/people/bam-sindhurattavej.jpg"),
+      },
+      {
         slug: "diya-sanghi",
         name: "Diya Sanghi",
         role: "Undergraduate Alum",
